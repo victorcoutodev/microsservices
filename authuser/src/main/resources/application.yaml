@@ -23,7 +23,7 @@ spring:
     ansi:
       enabled: Always
   rabbitmq:
-    addresses: amqps://bxddxvch:DivkHsS_TY291Ku4psOkAAfRmZbCmoZ6@toad.rmq.cloudamqp.com/bxddxvch
+    addresses: ${{ secrets.RABBITMQ_ADRESS }}
 
 
 logging:
