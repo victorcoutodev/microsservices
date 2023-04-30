@@ -22,7 +22,7 @@ public class CourseValidator implements Validator {
     private Validator validator;
 
     @Autowired
-    private UserService userService;
+    UserService userService;
 
     @Override
     public boolean supports(Class<?> aClass) {

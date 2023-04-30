@@ -26,11 +26,10 @@ public class SpecificationTemplate {
     public interface CourseSpec extends Specification<CourseModel> {}
 
     @And({
-            @Spec(path = "userType", spec = Equal.class),
-            @Spec(path = "userStatus", spec = Equal.class),
-            @Spec(path = "email", spec = Like.class),
-            @Spec(path = "fullName", spec = Like.class)
-    })
+            @Spec(path="email", spec= Like.class),
+            @Spec(path = "fullName", spec = Like.class),
+            @Spec(path="userStatus", spec= Equal.class),
+            @Spec(path="userType", spec= Equal.class)})
     public interface UserSpec extends Specification<UserModel> {}
 
     @Spec(path = "title", spec = Like.class)
@@ -74,8 +73,10 @@ public class SpecificationTemplate {
             query.distinct(true);
             Root<CourseModel> course = root;
             Root<UserModel> user = query.from(UserModel.class);
-            Expression<Collection<CourseModel>> usersCourses = course.get("users");
-            return cb.and(cb.equal(course.get("userId"), userId), cb.isMember(course, usersCourses));
+            Expression<Collection<CourseModel>> usersCourses = user.get("courses");
+            return cb.and(cb.equal(user.get("userId"), userId), cb.isMember(course, usersCourses));
         };
     }
+
+
 }

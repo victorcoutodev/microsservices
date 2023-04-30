@@ -1,4 +1,4 @@
-package com.ead.course.configs;
+package com.ead.notification.configs;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;

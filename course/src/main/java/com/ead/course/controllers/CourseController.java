@@ -94,7 +94,7 @@ public class CourseController {
         if(userId != null){
             return ResponseEntity.status(HttpStatus.OK)
                     .body(courseService.findAll(SpecificationTemplate.courseUserId(userId).and(spec), pageable));
-        }else{
+        } else {
             return ResponseEntity.status(HttpStatus.OK).body(courseService.findAll(spec, pageable));
         }
     }
